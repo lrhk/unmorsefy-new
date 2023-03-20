@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>UnMorsefy</title>
+</head>
+<body>
+    <nav class="grey darken-3">
+        <div class="nav-wrapper container">
+    
+            <a href="#!" class="brand-logo center">UnMorsefy</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="/morse">UnMorsefy</a></li>
+                <li><a href="/morse/scores">Scoreboard</a></li>
+                <li><a href="/morse/suggest">Suggest</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h3 class="center">Suggest a New Sentence to Morsefy</h3>
+        <h6><%= user.userName %>'s score: <%= user.score %></h6>
+        
+        <form action="/morse/createMorse" method='POST'>
+            <input type="text" placeholder="Enter Suggestion" name='morseItem'>
+            <button type="submit" class="btn btn-primary">Suggest</button>
+        </form>
+    </div>
+
+
+    <script src="../js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   
+    <script>
+        M.Sidenav.init(document.querySelector('.sidenav'))
+    </script>
+
+</body>
+</html>
