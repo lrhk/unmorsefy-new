@@ -24,55 +24,9 @@ async function updateScore(){
     }
 }
 
-//! MORSE CODE CODE!
-
-morseAlpha = {
-    A:	'. _ ',
-    B:	'_ . . . ',
-    C:	'_ . _ . ',	
-    D:	'_ . . ',
-    E:	'. ',
-    F:	'. . _ . ',
-    G:	'_ _ . ',	
-    H:	'. . . . ',	
-    I:	'. . ',
-    J:	'. _ _ _ ',
-    K:	'_ . _ ',
-    L:	'. _ . . ',
-    M:	'_ _ ',
-    N:	'_ . ',
-    O:	'_ _ _ ',	
-    P:	'. _ _ . ',
-    Q:	'. _ . ',
-    R:	'. _ . ',
-    S:	'. . . ',
-    T:	'_ ',
-    U:	'. . _ ',
-    V:	'. . . _ ',
-    W:	'. _ _ ',
-    X:	'_ . . _ ',
-    Y:	'_ . _ _ ',
-    Z:	'_ _ . . ',
-    0:	'_ _ _ _ _ ',
-    1:	'. _ _ _ _ ',
-    2:	'. . _ _ _ ',
-    3:	'. . . _ _ ',
-    4:	'. . . . _ ',
-    5:	'. . . . . ',
-    6:	'_ . . . . ',
-    7:	'_ _ . . . ',
-    8:	'_ _ _ . . ',
-    9:	'_ _ _ _ . ',
-    '.': '. _ . _ . _ ',
-    ',': '_ _ . . _ _ ',
-    ' ': '||| '
-    }
-    
-let convert = document.querySelector('.morsed').innerText.toUpperCase()
-let guessSubmit = document.querySelector('#guessButton')
-        .addEventListener('click', checkMorse)
+// Displaying the dictionary and declaring the "tip" flag
 let tip = false
-    
+
 document.getElementById('tip').addEventListener('click', () => {
     tip = true
     if (document.getElementById('morseTip').className === 'expandable') {
@@ -81,19 +35,18 @@ document.getElementById('tip').addEventListener('click', () => {
         document.getElementById('morseTip').classList.replace('expandable-return', 'expandable')
     }
 })
-    
-function convertMorse(text) {
-    return text.split('').map(letter => morseAlpha[letter]).join('| ')
-}
-    
-document.querySelector('.morsed').innerText = convertMorse(convert)
-    
+
+// Checking 
+const guessSubmit = document.querySelector('#guessButton')
+        .addEventListener('click', checkMorse)
+const alpha = document.getElementById('alpha').innerText.toUpperCase()
+
 function checkMorse() {
     const check = document.querySelector('#guessWord').value.toUpperCase()
-    if (check === convert) {
+    if (check === alpha) {
         console.log('RIGHT')
         document.querySelector('.morsed').classList.replace('morsed', 'completed')
-        alert(`GREAT JOB! The answer is ${convert}`)
+        alert(`GREAT JOB! The answer is ${alpha}`)
         updateScore()
         } else {
             console.log('WRONG')
