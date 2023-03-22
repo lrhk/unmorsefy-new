@@ -20,7 +20,7 @@ li span {
     transition: all .5s ease-in-out;
     transform-origin: right top;
     transform: scaleX(0);
-    display: flex;
+    /* display: flex; */
     justify-content: center;
 }
    
@@ -28,7 +28,7 @@ li span {
     transition: all .5s ease-in-out;
     transform-origin: right top;
     transform: scaleX(1);
-    display: flex;
+    /* display: flex; */
     justify-content: center;
 }
 

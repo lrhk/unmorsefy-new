@@ -26,9 +26,9 @@ async function updateScore(){
 
 // Displaying the dictionary and declaring the "tip" flag
 let tip = false
-
 document.getElementById('tip').addEventListener('click', () => {
     tip = true
+    document.getElementById('morseTip').style.display = 'flex'
     if (document.getElementById('morseTip').className === 'expandable') {
         document.getElementById('morseTip').classList.replace('expandable', 'expandable-return')
     } else {
@@ -45,7 +45,7 @@ function checkMorse() {
     const check = document.querySelector('#guessWord').value.toUpperCase()
     if (check === alpha) {
         console.log('RIGHT')
-        document.querySelector('.morsed').classList.replace('morsed', 'completed')
+        // document.querySelector('.morsed').classList.replace('morsed', 'completed')
         alert(`GREAT JOB! The answer is ${alpha}`)
         updateScore()
         } else {
